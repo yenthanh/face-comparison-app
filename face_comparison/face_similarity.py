@@ -116,8 +116,9 @@ class FaceSimilarity():
 
     def base64_to_RGB(self, base64_string):
         imgdata = base64.b64decode(str(base64_string))
-        img = Image.open(io.BytesIO(imgdata))
-        img = np.array(img)
+        img = io.BytesIO(imgdata)
+        # img = Image.open(io.BytesIO(imgdata))
+        # img = np.array(img)
         return img
 
     def face_detect(self):
